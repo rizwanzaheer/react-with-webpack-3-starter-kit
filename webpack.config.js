@@ -25,6 +25,17 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename:'[name].bundle.js'
     },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+      alias: {
+        assets: path.resolve('src/assets'),
+        components: path.resolve('src/components'),
+        general: path.resolve('src/general'),
+        layouts: path.resolve('src/layouts'),
+        routes: path.resolve('src/routes'),
+        styles: path.resolve('src/styles'),
+      },
+    },
     module: {
         rules:[
             { 
