@@ -54,7 +54,7 @@ module.exports = {
                 // })
                 //use: ['style-loader','css-loader','sass-loader']
             },
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+            { test: /\.(jsx|js)$/, exclude: /node_modules/, loader: "babel-loader" },
             { test: /\.(woff2?svg)$/, loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' },
             { test: /\.(ttf?eot)$/, loader: 'file-loader?name=fonts/[name].[ext]' },
             { test: /bootstrap[\/\\]dist[\/\\]js[\/\\]umd[\/\\]/, loader: 'imports-loader?jQuery=jquery' }
@@ -65,7 +65,7 @@ module.exports = {
         compress: true,
         hot: true,
         port: 9000,
-        //stats:"errors-only", /// used to show only error where from u running app
+        stats:"errors-only", /// used to show only error where from u running app
         //open: true // while starting project Open in new window
     },
     plugins: [
@@ -80,13 +80,13 @@ module.exports = {
             //filename:"./../index.html", // change the final template file from dist folder to root dir
             template: './src/index.html', // Load a custom template, Optional is EJS(ejs by default)
         }),
-        new HtmlWebpackPlugin({
-            title: 'Contact Template',
-            hash: true,
-            chunks:['contact'],
-            filename:'contact.html',
-            template: './src/contact.html', // Load a custom template, Optional is EJS(ejs by default)
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: 'Contact Template',
+        //     hash: true,
+        //     chunks:['contact'],
+        //     filename:'contact.html',
+        //     template: './src/contact.html', // Load a custom template, Optional is EJS(ejs by default)
+        // }),
         new ExtractTextPlugin({ filename: './css/[name].scss', disable: !isProd, allChunks: true }),
 
         new webpack.HotModuleReplacementPlugin(),
