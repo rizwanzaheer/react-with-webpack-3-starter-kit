@@ -1,7 +1,7 @@
 {
-  "name": "embrace-it",
+  "name": "react-webpack-starter-kit",
   "version": "1.0.0",
-  "description": "Embrace it",
+  "description": "react with webpack 2 starter kit",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
