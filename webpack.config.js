@@ -68,7 +68,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Embrace It',
+      title: 'React webpack starter kit',
       minify: {
         collapseWhitespace: true,
       },
