@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Root from './root';
+import Root from './views';
+
 import css from './style/app.scss';
 
 
