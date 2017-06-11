@@ -27,6 +27,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -62,9 +63,10 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     hot: true,
-    port: 9000,
+    port: 9090,
     stats: 'errors-only',
     open: false,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
