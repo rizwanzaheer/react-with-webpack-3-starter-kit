@@ -22,7 +22,6 @@ export default class ContactUs extends Component {
     return (
       <section>
         <div>
-          <Navbar />
           <div className="container">
             <form
               className="well form-horizontal"
@@ -258,7 +257,6 @@ export default class ContactUs extends Component {
               </fieldset>
             </form>
           </div>
-          <Footer />
         </div>
       </section>
     );

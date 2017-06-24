@@ -22,11 +22,11 @@ export default class MainSection extends Component {
 									<div className="modal-body">
 										<form>
 											<div className="form-group">
-												<label for="recipient-name" className="control-label">Recipient:</label>
+												<label htmlFor="recipient-name" className="control-label">Recipient:</label>
 												<input type="text" className="form-control" id="recipient-name" />
 											</div>
 											<div className="form-group">
-												<label for="message-text" className="control-label">Message:</label>
+												<label htmlFor="message-text" className="control-label">Message:</label>
 												<textarea className="form-control" id="message-text"></textarea>
 											</div>
 										</form>

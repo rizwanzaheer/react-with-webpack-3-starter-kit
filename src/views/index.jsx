@@ -11,9 +11,7 @@ export default class Root extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <MainSection />
-        <Footer />
       </div>
     );
   }
