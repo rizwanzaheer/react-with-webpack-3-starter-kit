@@ -46,7 +46,13 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "tether": "^1.4.0",
-    "url-loader": "^0.5.8",
+    "url-loader": "^0.5.8",,
+    "file-loader": "^0.11.1",
+    "image-webpack-loader": "^3.3.1",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5",
     "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
@@ -55,12 +61,6 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "file-loader": "^0.11.1",
-    "image-webpack-loader": "^3.3.1",
-    "nodemon": "^1.11.0",
-    "rimraf": "^2.6.1",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "babel-preset-react": "^6.24.1"
   }
 }
