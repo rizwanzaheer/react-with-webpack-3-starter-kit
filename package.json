@@ -46,7 +46,7 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "tether": "^1.4.0",
-    "url-loader": "^0.5.8",,
+    "url-loader": "^0.5.8",
     "file-loader": "^0.11.1",
     "image-webpack-loader": "^3.3.1",
     "nodemon": "^1.11.0",
