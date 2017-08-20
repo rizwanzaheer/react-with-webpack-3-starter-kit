@@ -1,1 +1,1 @@
-# React with webpack 2 starter kit
+# Reactjs with bootstrap, Wabpack 3, ES6, postcss starter kit
