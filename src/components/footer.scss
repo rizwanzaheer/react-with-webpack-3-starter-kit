@@ -1,0 +1,14 @@
+footer{
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  .copyright{
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    height: auto;
+    background-color: #252525;
+    color: white;
+  }
+}

@@ -1,10 +1,6 @@
 @import '../assets/bootstrap/customizations.scss';
 @import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
 
-.active{
-  color:#555 !important;
-  background-color: #e7e7e7 !important;
-}
 h1{
     color: blue !important;
 }
@@ -12,18 +8,4 @@ h1{
 section{
   min-height: calc(100vh - 131px);
   height: calc(100% - 140px);
-}
-footer{
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 2;
-  .copyright{
-    text-align: center;
-    padding: 20px;
-    margin: 0px;
-    height: auto;
-    background-color: #252525;
-    color: white;
-  }
 }

@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
 const express = require('express');
-const nodemailer = require('nodemailer');
 
 const port = process.env.PORT || 9090;
 
