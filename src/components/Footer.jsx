@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import footerStyle from '../components/footer.scss';
+import React from 'react';
+import { copyright } from '../components/footer.scss';
 
-export default class Footer extends Component {
-  componentWillMount() {
-  }
+const Footer = () => (
+  <div>
+    <footer>
+      <p className={copyright}>© 2017 • <a target="_blank" href="https://www.facebook.com/rizwanzaheerr"> Rizwan </a></p>
+    </footer>
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        <footer>
-          <p className={footerStyle.copyright}>© 2017 • <a href="https://www.facebook.com"> Rizwan </a></p>
-        </footer>
-      </div>
-    );
-  }
-}
+export default Footer;
