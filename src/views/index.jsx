@@ -9,7 +9,7 @@ export default class Root extends Component {
   render() {
     return (
       <div>
-        <MainSection props={this.props} />
+        <MainSection />
       </div>
     );
   }

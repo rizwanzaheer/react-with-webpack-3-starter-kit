@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class MainSection extends Component {
   render() {
-    console.log(this.props);
     return (
       <section>
         <button
