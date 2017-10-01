@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-
 class ToDoItems extends Component {
   render() {
-    return (<li onClick={() => {this.props.clickHandler(this.props.index)}}> {this.props.tasks.name} </li>);
+    return (
+      <li onClick={() => {
+        this.props.clickHandler(this.props.index);
+      }}
+      > {this.props.tasks.name} </li>
+    );
   }
 }
 
@@ -33,8 +35,8 @@ export default class Root extends Component {
       ],
     };
   }
-  componentWillMount() { 
-    if(location.pathname){
+  componentWillMount() {
+    if (location.pathname) {
       console.log(location.pathname);
     }
   }
@@ -49,12 +51,14 @@ export default class Root extends Component {
           <h1> About Component view </h1>
           <ul>
             {
-              this.state.tasks.map((task, index) => {
-                return <ToDoItems key={task.name} clickHandler={this.changeState} tasks={task} index={index} />;
-              })
+              this.state.tasks.map((task, index) => <ToDoItems
+                key={task.name}
+                clickHandler={this.changeState}
+                tasks={task} index={index}
+              />)
             }
           </ul>
-          <p>URL: { location.pathname }</p>
+          <p>URL: {location.pathname}</p>
         </section>
       </div>
     );
