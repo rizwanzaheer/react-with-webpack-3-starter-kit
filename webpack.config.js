@@ -82,13 +82,14 @@ module.exports = {
       { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports-loader?jQuery=jquery' },
     ],
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     hot: true,
     port: 9090,
     stats: 'errors-only',
-    open: false,
+    open: true,
     historyApiFallback: true,
   },
   plugins: [

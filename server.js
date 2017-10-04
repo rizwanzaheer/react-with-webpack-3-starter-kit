@@ -28,24 +28,22 @@ if (isProduction) {
   });
 } else {
   app = express();
-  app.use(require('webpack-dev-middleware')(compiler, {
-    publicPath: config.output.publicPath,
-    historyApiFallback: true,
-    compress: true,
-  }));
+  console.log('in dev start');
   app.use(require('webpack-hot-middleware')(compiler));
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'));
   });
   app = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
+    hot: true,
     hotOnly: true,
     inline: true,
     historyApiFallback: true,
     compress: true,
     open: true,
-    stats: 'normal',
+    stats: 'minimal',
   });
+  console.log('in dev last');
 }
 
 
