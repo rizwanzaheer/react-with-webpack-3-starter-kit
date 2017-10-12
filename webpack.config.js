@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const $ = require('jquery');
 const PurifyCSSPlugin = require('purifycss-webpack');
 
-
 const bootstrapEntryPoints = require('./webpack.bootstrap.config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -21,13 +20,15 @@ const cssDev = ExtractTextPlugin.extract({
         sourceMap: true,
         importLoaders: 1,
       },
-    }, {
+    },
+    {
       loader: 'postcss-loader',
       options: {
         modules: true,
         sourceMap: true,
       },
-    }, {
+    },
+    {
       loader: 'sass-loader',
       options: {
         sourceMap: true,
@@ -39,12 +40,13 @@ const cssProd = ExtractTextPlugin.extract({
   use: ['css-loader', 'postcss-loader', 'sass-loader'],
 });
 const cssConfig = isProd ? cssProd : cssDev;
-const bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
+const bootstrapConfig = isProd
+  ? bootstrapEntryPoints.prod
+  : bootstrapEntryPoints.dev;
 
 module.exports = {
-
   entry: {
-    app: './src/app.jsx',
+    app: ['babel-polyfill', './src/app.jsx'],
     bootstrap: bootstrapConfig,
   },
   output: {
@@ -67,19 +69,22 @@ module.exports = {
     rules: [
       {
         test: /\.(jpe?g|png|jpg|gif|svg)$/i,
-        loader: [
-          'file-loader?name=img/[name].[ext]',
-          'image-webpack-loader',
-        ],
+        loader: ['file-loader?name=img/[name].[ext]', 'image-webpack-loader'],
       },
       {
         test: /\.scss$/,
         use: cssConfig,
       },
       { test: /\.(jsx|js)$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' },
+      {
+        test: /\.(woff2?|svg)$/,
+        loader: 'url-loader?limit=10000&name=fonts/[name].[ext]',
+      },
       { test: /\.(ttf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]' },
-      { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports-loader?jQuery=jquery' },
+      {
+        test: /bootstrap-sass\/assets\/javascripts\//,
+        loader: 'imports-loader?jQuery=jquery',
+      },
     ],
   },
   devtool: 'source-map',
@@ -101,10 +106,14 @@ module.exports = {
       hash: true,
       template: './src/index.html',
     }),
-    new ExtractTextPlugin({ filename: '/css/[name].scss', disable: !isProd, allChunks: true }),
+    new ExtractTextPlugin({
+      filename: '/css/[name].scss',
+      disable: !isProd,
+      allChunks: true,
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    //new ExtractTextPlugin({ filename: '[name].scss', allChunks: true }),
+    // new ExtractTextPlugin({ filename: '[name].scss', allChunks: true }),
     new PurifyCSSPlugin({
       // Give paths to parse for rules. These should be absolute!
       paths: glob.sync(path.join(__dirname, 'src/*.html')),
