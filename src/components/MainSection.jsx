@@ -1,7 +1,12 @@
 import React from 'react';
+import DatePicker from 'antd/lib/date-picker';
+// import 'antd/lib/date-picker/style/css';
+
+// import '../../node_modules/antd/dist/antd.css';
 
 const MainSection = () => (
   <section>
+    <DatePicker />
     <button
       type="button"
       className="btn btn-primary"
